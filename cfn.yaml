@@ -5,7 +5,7 @@ Parameters:
   Stack:
     Description: Stack name
     Type: String
-    Default: tutorial
+    Default: playground
   App:
     Description: Application name
     Type: String

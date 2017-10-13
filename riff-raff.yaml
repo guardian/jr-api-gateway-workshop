@@ -1,4 +1,4 @@
-stacks: [tutorial]
+stacks: [playground]
 regions: [eu-west-1]
 
 deployments:

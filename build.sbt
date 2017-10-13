@@ -22,10 +22,12 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0"
 )
 
-enablePlugins(RiffRaffArtifact)
+enablePlugins(JavaAppPackaging, RiffRaffArtifact)
 
-assemblyJarName := s"${name.value}.jar"
-riffRaffPackageType := assembly.value
+topLevelDirectory in Universal := None
+packageName in Universal := normalizedName.value
+
+riffRaffPackageType := (packageBin in Universal).value
 riffRaffUploadArtifactBucket := Option("riffraff-artifact")
 riffRaffUploadManifestBucket := Option("riffraff-builds")
 riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
