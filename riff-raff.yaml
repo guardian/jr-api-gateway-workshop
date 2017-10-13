@@ -1,0 +1,19 @@
+stacks: [tutorial]
+regions: [eu-west-1]
+
+deployments:
+  jr-microservice-workshop:
+    type: aws-lambda
+    parameters:
+      bucket: gu-jr-microservice-workshop-dist
+      functionNames: [jr-microservice-workshop-]
+      fileName: jr-microservice-workshop.jar
+      prefixStack: false
+    dependencies: [jr-microservice-workshop-cfn]
+  jr-microservice-workshop-cfn:
+    type: cloud-formation
+    app: jr-microservice-workshop
+    parameters:
+      prependStackToCloudFormationStackName: false
+      cloudFormationStackName: jr-microservice-workshop
+      templatePath: cfn.yaml

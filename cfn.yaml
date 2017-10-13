@@ -20,7 +20,7 @@ Parameters:
   DeployBucket:
     Description: Bucket where RiffRaff uploads artifacts on deploy
     Type: String
-    Default: gu-microservice-workshop-dist
+    Default: gu-jr-microservice-workshop-dist
 
 Resources:
   ExecutionRole:
