@@ -4,6 +4,7 @@ templates:
   jr-microservice-workshop:
     type: aws-lambda
     app: jr-microservice-workshop
+    contentDirectory: jr-microservice-workshop
     parameters:
       bucket: gu-jr-microservice-workshop-dist
       functionNames: [jr-microservice-workshop-]
