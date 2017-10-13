@@ -1,15 +1,19 @@
 stacks: [playground]
 regions: [eu-west-1]
-
-deployments:
+templates:
   jr-microservice-workshop:
     type: aws-lambda
+    app: jr-microservice-workshop
     parameters:
       bucket: gu-jr-microservice-workshop-dist
       functionNames: [jr-microservice-workshop-]
-      fileName: jr-microservice-workshop.jar
+      fileName: jr-microservice-workshop.zip
       prefixStack: false
-    dependencies: [jr-microservice-workshop-cfn]
+
+deployments:
+  jr-microservice-upload:
+    template: jr-microservice-workshop
+    actions: [uploadLambda]
   jr-microservice-workshop-cfn:
     type: cloud-formation
     app: jr-microservice-workshop
@@ -17,3 +21,8 @@ deployments:
       prependStackToCloudFormationStackName: false
       cloudFormationStackName: jr-microservice-workshop
       templatePath: cfn.yaml
+    dependencies: [jr-microservice-upload]
+  jr-microservice-lambda-update:
+    template: jr-microservice-workshop
+    actions: [updateLambda]
+    dependencies: [jr-microservice-workshop-cfn]
