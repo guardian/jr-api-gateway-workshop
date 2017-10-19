@@ -30,7 +30,7 @@ scalacOptions ++= Seq(
 val circeVersion = "0.7.0"
 
 libraryDependencies ++= Seq(
-  "com.amazonaws" % "aws-lambda-java-core" % "1.1.0",
+  "com.amazonaws" % "aws-lambda-java-core" % "1.1.0"
 )
 
 enablePlugins(JavaAppPackaging, RiffRaffArtifact)
@@ -47,7 +47,7 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 
 
 
-5. Create a file called plugins.sbt in a new directory “project”
+5. Create a file called plugins.sbt in root/project
 
 6. Add the following 2 lines : 
 `addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
