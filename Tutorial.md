@@ -108,6 +108,7 @@ templates:
   deployments:
     <name of project>-upload:
       template: <name of project>
-      actions: [uploadLambda]```
+      actions: [uploadLambda]
+      ```
 
 18. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and start typing in your project name. Click deploy
