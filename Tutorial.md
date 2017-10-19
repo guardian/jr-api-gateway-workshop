@@ -60,8 +60,6 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 ```
 package com.gu.microserviceWorkshop
 
-import com.typesafe.scalalogging.LazyLogging
-
 object Lambda extends LazyLogging {
 
   def handler(): String = {
