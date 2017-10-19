@@ -1,4 +1,4 @@
-name := "jr-microservice-workshop"
+name := "jr-microservice-workshop-test"
 
 organization := "com.gu"
 
@@ -15,7 +15,6 @@ scalacOptions ++= Seq(
   "-Ywarn-dead-code"
 )
 
-val circeVersion = "0.7.0"
 
 libraryDependencies ++= Seq(
   "com.amazonaws" % "aws-lambda-java-core" % "1.1.0",

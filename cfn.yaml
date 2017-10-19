@@ -5,7 +5,7 @@ Parameters:
   Stack:
     Description: Stack name
     Type: String
-    Default: playground
+    Default: ophan
   App:
     Description: Application name
     Type: String
