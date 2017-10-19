@@ -83,15 +83,18 @@ The ‘handler’ function is the function that will be called when your lambda 
 
 14. Select Simple Build Tool (scala) as the Runner Type
 
-15. On the "New Build Step" page that comes up, edit “Sbt commands” to: `clean compile test riffRaffUpload` and click save
+15. On the "New Build Step" page that comes up, edit “Sbt commands” to: `clean compile test riffRaffUpload` 
+and click save
 
 16. Go to Version Control Settings in the side menu and click edit on the VCS root that appears
 
 17. Show advanced options
 
-18. Set branch specifications to +:refs/heads/* (this allows all your branches from github to automatically build) and save
+18. Set branch specifications to +:refs/heads/* (this allows all your branches from github to automatically build)
+and save
 
-19. Check that branches are building by pushing to a new branch and navigating to your build through the Projects in the toolbar (your project will be under Playground)
+19. Check that branches are building by pushing to a new branch and navigating to your build through the Projects 
+in the toolbar (your project will be under Playground)
 
 20. Create a riff-raff.yaml and add the following:
 
@@ -116,8 +119,10 @@ templates:
       ```
 Make sure you replace <name of project> with your project name you decided on in step 1
 
-21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and start typing in your project name. Click deploy.
- This will upload your artifact to https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip
+21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and 
+start typing in your project name. Click deploy.
+ This will upload your artifact to
+ https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip
 
 22. Create a cloudformation template with the following:
 
@@ -202,9 +207,11 @@ Resources:
 Don't forget to replace <name of your project>.
 Here we have defined 2 resources: An execution roll that is given permission to invoke the Lambda,
 and the Lambda itself. You will see that under 'Code', we have told the template where to find our
-code, in the bucket defined in the DeployBucket parameter at the top of the template (we use Ref to refer to a single parameter), in this case gu-jr-microservice-workshop-dist,
-and the key (which is basically the path to the file and the filename).which in our case will be playground/PROD/<name of your project>/<name of your project>.zip.
-!Sub is used to refer to multiple parameters in the parameters section defined at the top in one go.
+code, in the bucket defined in the DeployBucket parameter at the top of the template (we use Ref to
+refer to a single parameter), in this case gu-jr-microservice-workshop-dist, and the key (which is
+basically the path to the file and the filename).which in our case will be playground/PROD/<name of 
+your project>/<name of your project>.zip. !Sub is used to refer to multiple parameters in the parameters 
+section defined at the top in one go.
 
 23. Add the following deployments to your riff-raff.yaml
 ```
@@ -231,7 +238,9 @@ The second one, which has the action updateLambda, updates the lambda with the .
 If you are having trouble knowing if your riff-raff template is formatted correctly, try going to https://riffraff.gutools.co.uk/
 , then navigating to Documentation -> Validate configuration
 
-24. You should now be able to find your Lambda by navigating to the Lambda section of the console and searching for your lambda. 
+24. You should now be able to find your Lambda by navigating to the Lambda section of the console and
+searching for your lambda. 
+
 If you click Test, it should run successfully and return the payload "hello world"
 
 
