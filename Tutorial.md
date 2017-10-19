@@ -70,8 +70,7 @@ object Lambda {
 ```
 The ‘handler’ function is the function that will be called when your lambda is invoked. You can name it whatever you want, but handler will do!  
 
-9. Push to github
- Go to https://teamcity.gutools.co.uk/admin/editProject.html?projectId=Playground
+9. Push to github, then go to https://teamcity.gutools.co.uk/admin/editProject.html?projectId=Playground
 
 10. Create subproject, give it a unique name
 
