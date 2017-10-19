@@ -55,7 +55,7 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 
 7. Compile using `sbt compile`
 
-8. Create file Lambda.scala in src/main/scala/com/gu/microserviceWorkshop with the following: 
+8. Create new Scala class Lambda.scala in src/main/scala/com/gu/microserviceWorkshop with the following: 
 
 ```
 package com.gu.microserviceWorkshop
