@@ -7,7 +7,43 @@
 
 3. Add a gitignore file to the root (see https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
 
-4. Create a file called build.sbt in the root (https://github.com/guardian/jr-api-gateway-workshop/blob/jr-tc/build.sbt)
+4. Create a file called build.sbt in the root with the following: (an example name of project is jr-microservice workshop, you will want to call it something unique so use your initials)
+
+```name := "<name of project>"
+
+organization := "com.gu"
+
+description:= "Build an API microservice with API gateway and lambda"
+
+version := "1.0"
+
+scalaVersion := "2.12.1"
+
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-encoding", "UTF-8",
+  "-target:jvm-1.8",
+  "-Ywarn-dead-code"
+)
+
+val circeVersion = "0.7.0"
+
+libraryDependencies ++= Seq(
+  "com.amazonaws" % "aws-lambda-java-core" % "1.1.0",
+)
+
+enablePlugins(JavaAppPackaging, RiffRaffArtifact)
+
+topLevelDirectory in Universal := None
+packageName in Universal := normalizedName.value
+
+riffRaffPackageType := (packageBin in Universal).value
+riffRaffUploadArtifactBucket := Option("riffraff-artifact")
+riffRaffUploadManifestBucket := Option("riffraff-builds")
+riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")```
+
+
+
 
 5. Create a file called plugins.sbt in a new directory “project”
 
@@ -16,9 +52,22 @@
 	addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")`
 
 7. Compile using `sbt compile`
- in the root, create new folder src/main/scala/com.gu/microserviceWorkshop
+ in the root, create new folder src/main/scala/com/gu/microserviceWorkshop
 
-8. Create file Lambda.scala (https://github.com/guardian/jr-api-gateway-workshop/blob/master/src/main/scala/com/gu/microserviceWorkshop/Lambda.scala). The ‘handler’ function is the function that will be called when your lambda is invoked. You can name it whatever you want, but handler will do!  
+8. Create file Lambda.scala with the following: 
+
+```package com.gu.microserviceWorkshop
+
+import com.typesafe.scalalogging.LazyLogging
+
+object Lambda extends LazyLogging {
+
+  def handler(): String = {
+    "hello world"
+  }
+
+}```
+The ‘handler’ function is the function that will be called when your lambda is invoked. You can name it whatever you want, but handler will do!  
 
 9. Push to github
  Go to https://teamcity.gutools.co.uk/admin/editProject.html?projectId=Playground
