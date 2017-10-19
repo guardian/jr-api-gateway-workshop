@@ -54,9 +54,8 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 	addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")`
 
 7. Compile using `sbt compile`
- in the root, create new folder src/main/scala/com/gu/microserviceWorkshop
 
-8. Create file Lambda.scala with the following: 
+8. Create file Lambda.scala in src/main/scala/com/gu/microserviceWorkshop with the following: 
 
 ```
 package com.gu.microserviceWorkshop
