@@ -1,17 +1,17 @@
-stacks: [ophan]
+stacks: [playground]
 regions: [eu-west-1]
 templates:
-  jr-microservice-workshop:
+  jr-microservice-workshop-test:
     type: aws-lambda
-    app: jr-microservice-workshop
-    contentDirectory: jr-microservice-workshop
+    app: jr-microservice-workshop-test
+    contentDirectory: jr-microservice-workshop-test
     parameters:
       bucket: gu-jr-microservice-workshop-dist
-      functionNames: [jr-microservice-workshop-]
-      fileName: jr-microservice-workshop.zip
+      functionNames: [jr-microservice-workshop-test-]
+      fileName: jr-microservice-workshop-test.zip
       prefixStack: false
 
 deployments:
-  jr-microservice-upload:
-    template: jr-microservice-workshop
+  jr-microservice-workshop-test-upload:
+    template: jr-microservice-workshop-test
     actions: [uploadLambda]
