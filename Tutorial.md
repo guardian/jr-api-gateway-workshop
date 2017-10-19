@@ -9,7 +9,8 @@
 
 4. Create a file called build.sbt in the root with the following: (an example name of project is jr-microservice workshop, you will want to call it something unique so use your initials)
 
-```name := "<name of project>"
+```
+name := "<name of project>"
 
 organization := "com.gu"
 
@@ -57,7 +58,8 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 
 8. Create file Lambda.scala with the following: 
 
-```package com.gu.microserviceWorkshop
+```
+package com.gu.microserviceWorkshop
 
 import com.typesafe.scalalogging.LazyLogging
 
@@ -92,7 +94,8 @@ The ‘handler’ function is the function that will be called when your lambda 
 
 18. Create a riff-raff.yaml and add the following: 
 
-```stacks: [playground]
+```
+stacks: [playground]
 regions: [eu-west-1]
 templates:
   <name of project>:
