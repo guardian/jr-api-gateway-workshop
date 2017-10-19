@@ -67,7 +67,8 @@ object Lambda extends LazyLogging {
     "hello world"
   }
 
-}```
+} 
+```
 The ‘handler’ function is the function that will be called when your lambda is invoked. You can name it whatever you want, but handler will do!  
 
 9. Push to github
