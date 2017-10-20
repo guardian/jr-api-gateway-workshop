@@ -1,13 +1,13 @@
 # jr-api-gateway-workshop
 
 
-1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`. An example name of project is jr-microservice workshop, you will want to call it something unique so use your initials
+1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as ``<name of project>`.
 
 2. Set up the repo locally and make your first commit
 
 3. Add a gitignore file to the root (see https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
 
-4. Create a file called build.sbt in the root with the following: 
+4. Create a file called build.sbt in the root with the following: (an example name of project is jr-microservice workshop, you will want to call it something unique so use your initials)
 
 ```
 name := "<name of project>"
@@ -51,10 +51,8 @@ Make sure you replace `<name of project>` with your project name you decided on 
 5. Create a file called plugins.sbt in root/project
 
 6. Add the following 2 lines :
-```
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
-addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
-```
+`addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
+	addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")`
 
 7. Compile using `sbt compile`
 
@@ -85,18 +83,15 @@ The ‘handler’ function is the function that will be called when your lambda 
 
 14. Select Simple Build Tool (scala) as the Runner Type
 
-15. On the "New Build Step" page that comes up, edit “Sbt commands” to: `clean compile test riffRaffUpload` 
-and click save
+15. On the "New Build Step" page that comes up, edit “Sbt commands” to: `clean compile test riffRaffUpload` and click save
 
 16. Go to Version Control Settings in the side menu and click edit on the VCS root that appears
 
 17. Show advanced options
 
-18. Set branch specifications to `+:refs/heads/*` (this allows all your branches from github to automatically build)
-and save
+18. Set branch specifications to +:refs/heads/* (this allows all your branches from github to automatically build) and save
 
-19. Check that branches are building by pushing to a new branch and navigating to your build through the Projects 
-in the toolbar (your project will be under Playground)
+19. Check that branches are building by pushing to a new branch and navigating to your build through the Projects in the toolbar (your project will be under Playground)
 
 20. Create a riff-raff.yaml and add the following:
 
@@ -114,24 +109,17 @@ templates:
       fileName:  <name of project>.zip
       prefixStack: false
 
-deployments:
-  <name of project>-upload:
-  template: <name of project>
-  actions: [uploadLambda]
-      
-```
-You can check your cloudformation template is valid at any point using the aws cli cloudformation validation-template command: 
-``` 
- aws cloudformation validate-template --template-body file:///Path/to/you/file/cfn.yaml
-```
+  deployments:
+    <name of project>-upload:
+      template: <name of project>
+      actions: [uploadLambda]
+      ```
 Make sure you replace <name of project> with your project name you decided on in step 1
 
-21. Push, wait for build on TC, and go to https://riffraff.gutools.co.uk/deployment/request and 
-start typing in your project name. Click deploy [NOTE: if it doesn't show up, riff raff may need redeploying]
- This will upload your artifact to
- `https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<name of project>/<name of project>.zip`
+21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and start typing in your project name. Click deploy.
+ This will upload your artifact to https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip
 
-22. Create a cloudformation template, cfn.yaml, in the root with the following:
+22. Create a cloudformation template in the root, cfn.yaml, with the following:
 
 ```
 AWSTemplateFormatVersion: 2010-09-09
@@ -208,7 +196,7 @@ Resources:
       Role: !GetAtt ExecutionRole.Arn
       Runtime: java8
       Timeout: 300
-      
+
   WorkshopLambdaInvokePermission:
     Type: AWS::Lambda::Permission
     Properties:
@@ -222,41 +210,54 @@ Resources:
 Don't forget to replace `<name of your project>`.
 Here we have defined 2 resources: An execution roll that is given permission to invoke the Lambda,
 and the Lambda itself. You will see that under 'Code', we have told the template where to find our
-code, in the bucket defined in the DeployBucket parameter at the top of the template (we use `Ref` to
-refer to a single parameter), in this case gu-jr-microservice-workshop-dist, and the key (which is
-basically the path to the file and the filename).which in our case will be `playground/PROD/<name of 
-your project>/<name of your project>.zip`. `!Sub` is used to refer to multiple parameters in the parameters 
-section defined at the top in one go.
+code, in the bucket defined in the DeployBucket parameter at the top of the template (we use Ref to refer to a single parameter), in this case gu-jr-microservice-workshop-dist,
+and the key (which is basically the path to the file and the filename).which in our case will be playground/PROD/<name of your project>/<name of your project>.zip.
+!Sub is used mcuh like string interpolation to inject the parameters section defined at the top in one go into strings.
 
-23. Add the following deployments to your riff-raff.yaml (Don't forget to replace `<name of project>`)
+The LambdaInvokePermission
+
+23. Add the following deployments to your riff-raff.yaml (same indentation level as the uploadLambda deployment you added before)
 ```
-<name of project>-cfn:
-  type: cloud-formation
-  app: <name of your project>
-  parameters:
-    prependStackToCloudFormationStackName: false
-    cloudFormationStackName: <name of project>
-    templatePath: cfn.yaml
-  dependencies: [<name of project>-upload]
-<name of project>-lambda-update:
-  template: <name of project>
-  actions: [updateLambda]
-  dependencies: [<name of project>-cfn]
+    <name of your project>-cfn:
+      type: cloud-formation
+      app: <name of your project>
+      parameters:
+        prependStackToCloudFormationStackName: false
+        cloudFormationStackName: <name of your project>
+        templatePath: cfn.yaml
+        dependencies: [<name of your project>-upload]
+
+    <name of your project>-lambda-update:
+      template: <name of your project>
+      actions: [updateLambda]
+      dependencies: [<name of your project>-cfn]
 ```
 
 The first one is of type 'cloudformation', and what this does is tells riff-raff to upload or update
 the cloudformation stack with the Stack, Stage and App specified in the parameters section of the cloudformation
 template.
 
-The second one, which has the action updateLambda, updates the lambda with the .zip file that is in your S3 bucket. 
+The second one, which has the action updateLambda, updates the lambda with the .zip file that is in your S3 bucket.
+
+Push, wait for teamcity to build your branch then try to deploy on riff-raff.
 
 If you are having trouble knowing if your riff-raff template is formatted correctly, try going to https://riffraff.gutools.co.uk/
 , then navigating to Documentation -> Validate configuration
 
-24. You should now be able to find your Lambda by navigating to the Lambda section of the console and
-searching for your lambda. 
+If you are getting cloudformation template validation errors, I recommend attempting to upload the cloudformation manually, it will fail at the
+first step if it isn't validated properly. Once it passes the upload step, you know that it is validated properly
+and you can deploy it through riff-raff.
+
+Sometimes riff-raff can be a bit flakey creating the Cloudformation stack on the first deploy. If you are having trouble, upload it manually
+first then try deploying through riff-raff. If you do upload it manually, make sure you add the following tags when
+prompted:
+
+Stack: `playground`
+Stage: `PROD`
+APP: `<name of project>`
+
+24. You should now be able to find your Lambda by navigating to the Lambda section of the console and searching for your lambda.
 
 If you click Test, it should run successfully and return the payload "hello world"
 
-Now for week 2 https://github.com/guardian/jr-api-gateway-workshop/blob/master/TutorialWeek2.md	
-
+Now for week 2 https://github.com/guardian/jr-api-gateway-workshop/blob/master/TutorialWeek2.md
