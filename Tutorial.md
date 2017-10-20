@@ -118,6 +118,10 @@ deployments:
   actions: [uploadLambda]
       
 ```
+You can check your cloudformation template is valid at any point using the aws cli cloudformation validation-template command: 
+``` 
+ aws cloudformation validate-template --template-body file:///Path/to/you/file/cfn.yaml
+```
 Make sure you replace <name of project> with your project name you decided on in step 1
 
 21. Push, wait for build on TC, and go to https://riffraff.gutools.co.uk/deployment/request and 
