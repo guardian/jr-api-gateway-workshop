@@ -216,18 +216,18 @@ section defined at the top in one go.
 
 23. Add the following deployments to your riff-raff.yaml
 ```
-    <name of your project>-cfn:
-      type: cloud-formation
-      app: <name of your project>
-      parameters:
-        prependStackToCloudFormationStackName: false
-        cloudFormationStackName: <name of your project>
-        templatePath: cfn.yaml
-        dependencies: [<name of your project>]
-    <name of your project>-lambda-update:
-      template: <name of your project>
-      actions: [updateLambda]
-      dependencies: [<name of your project>-cfn]
+<name of your project>-cfn:
+  type: cloud-formation
+  app: <name of your project>
+  parameters:
+    prependStackToCloudFormationStackName: false
+    cloudFormationStackName: <name of your project>
+    templatePath: cfn.yaml
+  dependencies: [<name of your project>]
+<name of your project>-lambda-update:
+  template: <name of your project>
+  actions: [updateLambda]
+  dependencies: [<name of your project>-cfn]
 ```
 
 The first one is of type 'cloudformation', and what this does is tells riff-raff to upload or update
