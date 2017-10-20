@@ -1,13 +1,13 @@
 # jr-api-gateway-workshop
 
 
-1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`.
+1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`. Nn example name of project is jr-microservice workshop, you will want to call it something unique so use your initials
 
 2. Set up the repo locally and make your first commit
 
 3. Add a gitignore file to the root (see https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
 
-4. Create a file called build.sbt in the root with the following: (an example name of project is jr-microservice workshop, you will want to call it something unique so use your initials)
+4. Create a file called build.sbt in the root with the following: 
 
 ```
 name := "<name of project>"
