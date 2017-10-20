@@ -40,7 +40,7 @@ For more on AWS::ApiGateway::Resource, see http://docs.aws.amazon.com/AWSCloudFo
  must send in their requests. Add the following to your cloudformation:
 
  ```
- WorkshopApitMethod:
+ WorkshopApiMethod:
   Type: AWS::ApiGateway::Method
   Properties:
     AuthorizationType: NONE
@@ -70,7 +70,7 @@ For more, see http://docs.aws.amazon.com/apigateway/latest/developerguide/api-ga
 so that our client cal call the API over the internet. Add the following to your template:
 
 ```
-WorkshopApiAPIDeployment:
+WorkshopApiDeployment:
   Type: AWS::ApiGateway::Deployment
   Properties:
     Description: Deploys the API into an environment/stage
