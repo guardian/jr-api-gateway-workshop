@@ -90,7 +90,7 @@ and click save
 
 17. Show advanced options
 
-18. Set branch specifications to +:refs/heads/* (this allows all your branches from github to automatically build)
+18. Set branch specifications to `+:refs/heads/*` (this allows all your branches from github to automatically build)
 and save
 
 19. Check that branches are building by pushing to a new branch and navigating to your build through the Projects 
