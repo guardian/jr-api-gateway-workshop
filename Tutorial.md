@@ -125,7 +125,7 @@ start typing in your project name. Click deploy.
  This will upload your artifact to
  `https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip`
 
-22. Create a cloudformation template with the following:
+22. Create a cloudformation template, cfn.yaml, in the root with the following:
 
 ```
 AWSTemplateFormatVersion: 2010-09-09
