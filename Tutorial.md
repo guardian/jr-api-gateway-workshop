@@ -51,8 +51,10 @@ Make sure you replace `<name of project>` with your project name you decided on 
 5. Create a file called plugins.sbt in root/project
 
 6. Add the following 2 lines :
-`addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
-	addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")`
+```
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
+addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
+```
 
 7. Compile using `sbt compile`
 
