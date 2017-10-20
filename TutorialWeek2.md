@@ -145,6 +145,7 @@ to your libraryDependenceis in your `build.sbt`
 
 Then create a new scala class called ApiResponse, with the following code:
 
+```
 package com.gu.microserviceWorkshop
 
 import io.circe.Encoder
@@ -154,7 +155,6 @@ import io.circe.generic.extras.semiauto._
 
 case class APIResponse(statusCode: Int, headers: Map[String, String], body: String)
 
-```
 object APIResponse {
 
   private val stringAPIResponseEncoder : Encoder[APIResponse] = deriveEncoder
