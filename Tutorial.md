@@ -208,6 +208,14 @@ Resources:
       Role: !GetAtt ExecutionRole.Arn
       Runtime: java8
       Timeout: 300
+      
+  WorkshopLambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Sub ${App}-${Stage}
+      Principal: apigateway.amazonaws.com
+    DependsOn: WorkshopLambda
 
 ```
 
