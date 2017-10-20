@@ -112,10 +112,10 @@ templates:
       fileName:  <name of project>.zip
       prefixStack: false
 
-  deployments:
-    <name of project>-upload:
-      template: <name of project>
-      actions: [uploadLambda]
+deployments:
+  <name of project>-upload:
+  template: <name of project>
+  actions: [uploadLambda]
       
 ```
 Make sure you replace <name of project> with your project name you decided on in step 1
