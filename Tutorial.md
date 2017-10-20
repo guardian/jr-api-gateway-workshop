@@ -1,7 +1,7 @@
 # jr-api-gateway-workshop
 
 
-1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as <name of project>.
+1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`.
 
 2. Set up the repo locally and make your first commit
 
@@ -44,7 +44,7 @@ riffRaffUploadManifestBucket := Option("riffraff-builds")
 riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 ```
 
-Make sure you replace <name of project> with your project name you decided on in step 1
+Make sure you replace `<name of project>` with your project name you decided on in step 1
 
 
 
@@ -123,7 +123,7 @@ Make sure you replace <name of project> with your project name you decided on in
 21. Push, wait for build on TC, and go to https://riffraff.gutools.co.uk/deployment/request and 
 start typing in your project name. Click deploy [NOTE: if it doesn't show up, riff raff may need redeploying]
  This will upload your artifact to
- `https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip`
+ `https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<name of project>/<name of project>.zip`
 
 22. Create a cloudformation template, cfn.yaml, in the root with the following:
 
@@ -205,29 +205,29 @@ Resources:
 
 ```
 
-Don't forget to replace <name of your project>.
+Don't forget to replace `<name of your project>`.
 Here we have defined 2 resources: An execution roll that is given permission to invoke the Lambda,
 and the Lambda itself. You will see that under 'Code', we have told the template where to find our
-code, in the bucket defined in the DeployBucket parameter at the top of the template (we use Ref to
+code, in the bucket defined in the DeployBucket parameter at the top of the template (we use `Ref` to
 refer to a single parameter), in this case gu-jr-microservice-workshop-dist, and the key (which is
-basically the path to the file and the filename).which in our case will be playground/PROD/<name of 
-your project>/<name of your project>.zip. !Sub is used to refer to multiple parameters in the parameters 
+basically the path to the file and the filename).which in our case will be `playground/PROD/<name of 
+your project>/<name of your project>.zip`. `!Sub` is used to refer to multiple parameters in the parameters 
 section defined at the top in one go.
 
-23. Add the following deployments to your riff-raff.yaml
+23. Add the following deployments to your riff-raff.yaml (Don't forget to replace `<name of project>`)
 ```
-<name of your project>-cfn:
+<name of project>-cfn:
   type: cloud-formation
   app: <name of your project>
   parameters:
     prependStackToCloudFormationStackName: false
-    cloudFormationStackName: <name of your project>
+    cloudFormationStackName: <name of project>
     templatePath: cfn.yaml
-  dependencies: [<name of your project>]
-<name of your project>-lambda-update:
-  template: <name of your project>
+  dependencies: [<name of project>]
+<name of project>-lambda-update:
+  template: <name of project>
   actions: [updateLambda]
-  dependencies: [<name of your project>-cfn]
+  dependencies: [<name of project>-cfn]
 ```
 
 The first one is of type 'cloudformation', and what this does is tells riff-raff to upload or update
