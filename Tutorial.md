@@ -120,8 +120,8 @@ templates:
 ```
 Make sure you replace <name of project> with your project name you decided on in step 1
 
-21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and 
-start typing in your project name. Click deploy.
+21. Push, wait for build on TC, and go to https://riffraff.gutools.co.uk/deployment/request and 
+start typing in your project name. Click deploy [NOTE: if it doesn't show up, riff raff may need redeploying]
  This will upload your artifact to
  `https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip`
 
