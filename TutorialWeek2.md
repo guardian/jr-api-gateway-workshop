@@ -184,4 +184,11 @@ def handler(in: InputStream, out: OutputStream): Unit = {
 }
 ```
 
+You will also need to add the following imports:
+
+```
+import io.circe.syntax._
+import java.nio.charset.StandardCharsets.UTF_8
+```
+
 Push, build and deploy, and your API should work!
