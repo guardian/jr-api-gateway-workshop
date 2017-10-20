@@ -1,7 +1,7 @@
 # jr-api-gateway-workshop
 
 
-1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`. Nn example name of project is jr-microservice workshop, you will want to call it something unique so use your initials
+1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`. An example name of project is jr-microservice workshop, you will want to call it something unique so use your initials
 
 2. Set up the repo locally and make your first commit
 
