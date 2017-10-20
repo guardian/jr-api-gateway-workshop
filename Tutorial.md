@@ -182,7 +182,7 @@ Resources:
                 -  lambda:InvokeFunction
               Resource: "*"
 
-  Lambda:
+  WorkshopLambda:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: !Sub ${App}-${Stage}
