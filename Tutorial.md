@@ -223,7 +223,7 @@ section defined at the top in one go.
     prependStackToCloudFormationStackName: false
     cloudFormationStackName: <name of project>
     templatePath: cfn.yaml
-  dependencies: [<name of project>]
+  dependencies: [<name of project>-upload]
 <name of project>-lambda-update:
   template: <name of project>
   actions: [updateLambda]
@@ -244,4 +244,5 @@ searching for your lambda.
 
 If you click Test, it should run successfully and return the payload "hello world"
 
+Now for week 2 https://github.com/guardian/jr-api-gateway-workshop/blob/master/TutorialWeek2.md	
 
