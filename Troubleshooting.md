@@ -7,4 +7,4 @@ Known problems and answers:
 
 or something to do with ROLLBACK
 
-_Answer: You need to manually delete the stack in the Cloudformation console. AWS is stupid if you try and upload a CF template and it doesn't have a working template to fall back on, it enters this weird state that isn't useful for anyone_
+__Answer: You need to manually delete the stack in the Cloudformation console. AWS is stupid: if you try and upload a CF template and it doesn't have a working template to fall back on, it enters this weird state that isn't useful for anyone__
