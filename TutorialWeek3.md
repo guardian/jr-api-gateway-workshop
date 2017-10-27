@@ -1,5 +1,5 @@
 # Congratulations!
-You made it to week 3. So far, this workshop has been a "follow the steps" kind of exercise, so for the final week, we are 
+You made it to week 3. So far, this workshop has been a "follow the steps" kind of exercise, so for this week, we are 
 going to try have a go by ourselves. 
 
 # Part 1
