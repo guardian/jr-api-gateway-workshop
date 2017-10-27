@@ -22,3 +22,6 @@ I will not upload the steps for you this time, but here are some hints:
 . Once you succesfully deploy your project with the API key parts implemented, you may have to manually redeploy your API Stage in the console to update the API to require an API key.
 
 . You can see how to use Postman to call your API with an API key here http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-use-postman-to-call-api.html
+
+If you get stuck, you can cheat and have a look at this PR.
+https://github.com/guardian/jr-test-workshop/pull/1/files
