@@ -37,4 +37,4 @@ attributes. For this challenge, we will return an Object that looks like this:
 }
 ```
 
-Hint: create a case class for your result data structure, and make a compainion object with an implicit encoder that will let you call `.toJson` on the result. 
+Hint: create a case class for your result data structure, and make a compainion object with an implicit encoder that will let you call `.asJson` on the result. 
