@@ -25,3 +25,16 @@ I will not upload the steps for you this time, but here are some hints:
 
 If you get stuck, you can cheat and have a look at this PR.
 https://github.com/guardian/jr-test-workshop/pull/1/files
+
+# Bonus challenge
+Your API currently returns a single line in the body, but often you would want to return a JSON object with multiple 
+attributes. For this challenge, we will return an Object that looks like this:
+
+```
+{
+  number: <the number we want to return>,
+  isPrime: <true or false>
+}
+```
+
+Hint: create a case class for your result data structure, and make a compainion object with an implicit encoder that will let you call `.toJson` on the result. 
