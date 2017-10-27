@@ -39,3 +39,9 @@ attributes. For this challenge, we will return an Object that looks like this:
 
 Hint: create a case class for your result data structure, and make a compainion object with an implicit encoder that will let you call `.asJson` on the result. 
 
+# Extras 
+If you have got this far and still want to do more, there are other things we havn't covered yet that you might want to have a go at
+
+. Have a go at setting up continuous deployment, so that master deploys automatically
+
+
