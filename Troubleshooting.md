@@ -1,7 +1,7 @@
 Known problems and answers:
 
 
-#1.I'm getting an error like this:
+###1.I'm getting an error like this:###
     ```
     [16:32:24] playground-PROD-lambda-test(AWS::CloudFormation::Stack}: UPDATE_ROLLBACK_IN_PROGRESS The following resource(s) failed to create: [WorkshopLambda].
     ```
@@ -13,6 +13,6 @@ Known problems and answers:
 
 
 
-#2. My riff-raff template isn't getting validation errrors. Is there some way I can validate it before going through the process of building and attempting to deploy?
+###2. My riff-raff template isn't getting validation errrors. Is there some way I can validate it before going through the process of building and attempting to deploy?###
 
     __Answer: Try going to https://riffraff.gutools.co.uk/ , then navigating to Documentation -> Validate configuration, and pasting in your configuration__
