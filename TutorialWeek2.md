@@ -192,4 +192,4 @@ import java.io._
 import java.nio.charset.StandardCharsets.UTF_8
 ```
 
-Push, build and deploy, and your API should work!
+Push, build and deploy, and your API should work! You can use Postman to test sending a POST request from a REST client to your API (see http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-use-postman-to-call-api.html)
