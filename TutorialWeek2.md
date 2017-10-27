@@ -104,6 +104,16 @@ WorkshopApiStageProd:
 
    Make sure that your path matches up with what you set as `PathPart` in the resource
 
+26. In order for API gateway to be able to call our lambda, we need to write a `AWS::Lambda::Permission` that explicitally allows this.  Add the following to your template:
+```
+  WorkshopLambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Sub ${App}-${Stage}
+      Principal: apigateway.amazonaws.com
+    DependsOn: WorkshopLambda
+```
 
 27. Now we have an API set up, we need give our IAM role permission to invoke it. Add the following to
 the `Policies` in your IAM role (the first resource we added to the template) :
@@ -184,6 +194,9 @@ import java.io._
 import java.nio.charset.StandardCharsets.UTF_8
 ```
 
-Push, build and deploy, and your API should work! You can use Postman to test sending a POST request from a REST client to your API (see http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-use-postman-to-call-api.html)
+Push, build and deploy, and your API should work!
+To test it, get the invoke URL by navigating to and clickin on your Stage in the API Gateway UI and try invoking it from a REST client.
+
+(You can use Postman to send your POST request, see http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-use-postman-to-call-api.html)
 
 Well done! Now for week 3 https://github.com/guardian/jr-api-gateway-workshop/blob/master/TutorialWeek3.md

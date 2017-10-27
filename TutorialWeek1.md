@@ -109,10 +109,10 @@ templates:
       fileName:  <name of project>.zip
       prefixStack: false
 
-  deployments:
-    <name of project>-upload:
-      template: <name of project>
-      actions: [uploadLambda]
+deployments:
+<name of project>-upload:
+  template: <name of project>
+  actions: [uploadLambda]
 
 ```
 
@@ -199,14 +199,6 @@ Resources:
       Runtime: java8
       Timeout: 300
 
-  WorkshopLambdaInvokePermission:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName: !Sub ${App}-${Stage}
-      Principal: apigateway.amazonaws.com
-    DependsOn: WorkshopLambda
-
 ```
 
 Don't forget to replace `<name of your project>`.
@@ -223,11 +215,11 @@ The LambdaInvokePermission
     <name of your project>-cfn:
       type: cloud-formation
       app: <name of your project>
+      dependencies: [<name of your project>-upload]
       parameters:
         prependStackToCloudFormationStackName: false
         cloudFormationStackName: <name of your project>
         templatePath: cfn.yaml
-        dependencies: [<name of your project>-upload]
 
     <name of your project>-lambda-update:
       template: <name of your project>
