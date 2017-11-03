@@ -8,7 +8,7 @@ making a microservice, we would want to return some variable output, depending o
 that takes a number as input and if the number is a prime number, returns the string `"this is a prime number"`, otherwise
 returns `"this is not a prime number"`.
 
-Hint: you can use this boilerplate to deal with reading the input and returning output (this example assumes result is already a string): Json
+Hint: you can use this boilerplate to deal with reading the input and returning output (this example assumes result is already a string): `jsonPayload` will just be the JSON that is passed to the handler
 
 ```
   def handler(in: InputStream, out: OutputStream): Unit = {
