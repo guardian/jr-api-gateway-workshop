@@ -8,6 +8,17 @@ making a microservice, we would want to return some variable output, depending o
 that takes a number as input and if the number is a prime number, returns the string `"this is a prime number"`, otherwise
 returns `"this is not a prime number"`.
 
+Hint: you can use this boilerplate to deal with reading the input and returning output (this example assumes result is already a string):
+
+```
+  def handler(in: InputStream, out: OutputStream): Unit = {
+    val jsonPayload = scala.io.Source.fromInputStream(in).mkString("")
+
+    val result = ???
+
+    out.write(result.getBytes(UTF_8))
+  }
+ ```
 # Part 2
 Currently, our API is open to the whole world. This means that anyone with the link could spam our service, or be able to 
 use our secret prime number identification service whenever they like. This could be a problem. One way we can fix this
