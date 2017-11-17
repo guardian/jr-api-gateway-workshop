@@ -56,3 +56,6 @@ If you have got this far and still want to do more, there are other things we ha
 . Have a go at setting up continuous deployment, so that master deploys automatically
 
 
+# Stuck?
+
+Here is one I made earlier https://github.com/guardian/jr-test-workshop
