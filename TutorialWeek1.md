@@ -3,7 +3,7 @@
 
 1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`.
 
-2. Set up the repo locally and make your first commit (if you visit your repo on github there will be instructions on how to do this on the Code tab)
+2. Set up the repo locally and make your first commit (if you visit your repo on github there will be instructions on how to do this on the Code tab) NOTE: you will want to create a new folder for this
 
 
 3. Add a gitignore file to the root (you can paste the contend from this one https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
@@ -51,8 +51,7 @@ Make sure you replace `<name of project>` with your project name you decided on 
 
 5. Create a file called plugins.sbt in root/project
 
-6. Add the following 2 lines:
-
+6. Add the following 2 lines :
 ```scala
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
 addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
@@ -63,7 +62,7 @@ addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
 8. Create new Scala class Lambda.scala in src/main/scala/com/gu/microserviceWorkshop with the following:
 
 ```scala
-package com.gu.microserviceWorkshop
+package com.gu.<name of project>
 
 object Lambda {
 
