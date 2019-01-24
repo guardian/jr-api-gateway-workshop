@@ -6,7 +6,7 @@
 2. Set up the repo locally and make your first commit (if you visit your repo on github there will be instructions on how to do this on the Code tab)
 
 
-3. Add a gitignore file to the root (see https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
+3. Add a gitignore file to the root (you can paste the contend from this one https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
 
 4. Create a file called build.sbt in the root with the following: (an example name of project is jr-microservice workshop, you will want to call it something unique so use your initials)
 
