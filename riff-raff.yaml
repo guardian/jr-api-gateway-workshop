@@ -11,6 +11,7 @@ templates:
       fileName: jr-microservice-workshop.zip
       prefixStack: false
 
+
 deployments:
   jr-microservice-upload:
     template: jr-microservice-workshop
