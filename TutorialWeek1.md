@@ -3,7 +3,7 @@
 
 1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`.
 
-2. Set up the repo locally and make your first commit (if you visit your repo on github there will be instructions on how to do this on the Code tab)
+2. Set up the repo locally and make your first commit (if you visit your repo on github there will be instructions on how to do this on the Code tab) NOTE: you will want to create a new folder for this
 
 
 3. Add a gitignore file to the root (you can paste the contend from this one https://github.com/guardian/jr-api-gateway-workshop/blob/master/.gitignore)
