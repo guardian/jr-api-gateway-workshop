@@ -10,7 +10,7 @@
 
 4. Create a file called build.sbt in the root with the following: (an example name of project is jr-microservice workshop, you will want to call it something unique so use your initials)
 
-```
+```scala
 name := "<name of project>"
 
 organization := "com.gu"
@@ -51,15 +51,18 @@ Make sure you replace `<name of project>` with your project name you decided on 
 
 5. Create a file called plugins.sbt in root/project
 
-6. Add the following 2 lines :
-`addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
-	addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")`
+6. Add the following 2 lines:
+
+```scala
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.1.0")
+addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
+```
 
 7. Compile using `sbt compile`
 
 8. Create new Scala class Lambda.scala in src/main/scala/com/gu/microserviceWorkshop with the following:
 
-```
+```scala
 package com.gu.microserviceWorkshop
 
 object Lambda {
@@ -96,7 +99,7 @@ The ‘handler’ function is the function that will be called when your lambda 
 
 20. Create a riff-raff.yaml and add the following:
 
-```
+```yaml
 stacks: [playground]
 regions: [eu-west-1]
 templates:
@@ -124,7 +127,7 @@ Make sure you replace <name of project> with your project name you decided on in
 
 22. Create a cloudformation template in the root, cfn.yaml, with the following:
 
-```
+```yaml
 AWSTemplateFormatVersion: 2010-09-09
 Description: Get
 
