@@ -122,7 +122,7 @@ deployments:
 Make sure you replace <name of project> with your project name you decided on in step 1
 
 21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and start typing in your project name. Click deploy.
- This will upload your artifact to https://s3.console.aws.amazon.com/s3/buckets/gu-jr-microservice-workshop-dist/playground/PROD/<your project name>/<your project name>.zip
+ This will upload your artifact to https://s3.console.aws.amazon.com/s3/buckets/gu-<name of your project>-dist/playground/PROD/<your project name>/<your project name>.zip
 
 22. Create a cloudformation template in the root, cfn.yaml, with the following:
 
@@ -207,7 +207,7 @@ Resources:
 Don't forget to replace `<name of your project>`.
 Here we have defined 2 resources: An execution roll that is given permission to invoke the Lambda,
 and the Lambda itself. You will see that under 'Code', we have told the template where to find our
-code, in the bucket defined in the DeployBucket parameter at the top of the template (we use Ref to refer to a single parameter), in this case gu-jr-microservice-workshop-dist,
+code, in the bucket defined in the DeployBucket parameter at the top of the template (we use Ref to refer to a single parameter), in this case gu-<name of your project>-dist,
 and the key (which is basically the path to the file and the filename).which in our case will be playground/PROD/<name of your project>/<name of your project>.zip.
 !Sub is used mcuh like string interpolation to inject the parameters section defined at the top in one go into strings.
 
