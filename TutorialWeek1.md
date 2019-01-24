@@ -59,7 +59,7 @@ addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
 
 7. Compile using `sbt compile`
 
-8. Create new Scala class Lambda.scala in src/main/scala/com/gu/<name of project> with the following:
+8. Create new Scala class Lambda.scala in src/main/scala/com/gu/<name of project>  with the following:
 
 ```scala
 package com.gu.<name of project>
