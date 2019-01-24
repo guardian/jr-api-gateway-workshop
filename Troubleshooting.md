@@ -12,5 +12,5 @@ Known problems and answers:
 
 
 
-2. My riff-raff template isn't getting validation errrors. Is there some way I can validate it before going through the process of building and attempting to deploy?
+2. My riff-raff template is getting validation errors. Is there some way I can validate it before going through the process of building and attempting to deploy?
     __Answer: Try going to https://riffraff.gutools.co.uk/ , then navigating to Documentation -> Validate configuration, and pasting in your configuration__
