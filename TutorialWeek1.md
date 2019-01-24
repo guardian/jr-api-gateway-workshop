@@ -62,7 +62,7 @@ addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
 8. Create new Scala class Lambda.scala in src/main/scala/com/gu/microserviceWorkshop with the following:
 
 ```
-package com.gu.microserviceWorkshop
+package com.gu.<name of project>
 
 object Lambda {
 
