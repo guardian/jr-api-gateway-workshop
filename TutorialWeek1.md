@@ -59,10 +59,10 @@ addSbtPlugin("com.gu" % "sbt-riffraff-artifact" % "1.0.0")
 
 7. Compile using `sbt compile`
 
-8. Create new Scala class Lambda.scala in src/main/scala/com/gu/<name of project>  with the following:
+8. Create new Scala class Lambda.scala in `src/main/scala/com/gu/<name of project in camelcase>`  with the following:
 
 ```scala
-package com.gu.<name of project>
+package com.gu.<name of project in camelcase>
 
 object Lambda {
 
@@ -107,7 +107,7 @@ templates:
     app: <name of project>
     contentDirectory:   <name of project>
     parameters:
-      bucket: gu-jr-microservice-workshop-dist
+      bucket: gu-<name of project>-dist
       functionNames: [<name of project>-]
       fileName:  <name of project>.zip
       prefixStack: false
@@ -149,7 +149,7 @@ Parameters:
   DeployBucket:
     Description: Bucket where RiffRaff uploads artifacts on deploy
     Type: String
-    Default: gu-jr-microservice-workshop-dist
+    Default: gu-<name of project>-dist
 
 Resources:
   ExecutionRole:
@@ -196,7 +196,7 @@ Resources:
           Stack: !Ref Stack
           App: !Ref App
       Description: Test lambda for workshop
-      Handler: com.gu.microserviceWorkshop.Lambda::handler
+      Handler: com.gu.<name of project in camel case>.Lambda::handler
       MemorySize: 512
       Role: !GetAtt ExecutionRole.Arn
       Runtime: java8
