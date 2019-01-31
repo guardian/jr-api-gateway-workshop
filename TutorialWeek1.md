@@ -5,7 +5,7 @@ Prerequisites:
 
 - sbt installed
 - intelliJ installed
-
+- Dev Playground Janus credentials 
 
 1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`.
 
