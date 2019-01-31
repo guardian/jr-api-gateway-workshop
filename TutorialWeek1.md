@@ -53,8 +53,6 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 
 Make sure you replace `<name of project>` with your project name you decided on in step 1
 
-At this point, open the project with intelliJ via File -> Open, and select build.sbt
-
 5. Create a file called plugins.sbt in root/project
 
 6. Add the following 2 lines :
