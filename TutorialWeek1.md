@@ -127,7 +127,7 @@ Make sure you replace <name of project> with your project name you decided on in
   
 20.5 (sorry!). Go to S3 in the Dev Playgorund account and create a bucket with the name `gu-<name of project>-dist` (make sure it is located in Ireland, and don't change any of the default settings).
 
-21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and start typing in your project name. Click deploy.
+21. Push, wait for build on TC, go to https://riffraff.gutools.co.uk/deployment/request and start typing in your project name. Click deploy (deploy to PROD).
  This will upload your artifact to `https://s3.console.aws.amazon.com/s3/buckets/gu-<name of your project>-dist/playground/PROD/<your project name>/<your project name>.zip`
 
 22. Create a cloudformation template in the root, cfn.yaml, with the following:
