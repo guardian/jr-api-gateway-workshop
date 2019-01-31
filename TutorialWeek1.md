@@ -117,9 +117,9 @@ templates:
       prefixStack: false
 
 deployments:
-<name of project>-upload:
-  template: <name of project>
-  actions: [uploadLambda]
+  <name of project>-upload:
+    template: <name of project>
+    actions: [uploadLambda]
 
 ```
 
