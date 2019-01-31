@@ -1,6 +1,12 @@
 # jr-api-gateway-workshop
 
 
+Prerequisites: 
+
+- sbt installed
+- intelliJ installed
+
+
 1. Go to https://repo-genesis.herokuapp.com/ and create a repo with what will now be referrerd to as `<name of project>`.
 
 2. Set up the repo locally and make your first commit (if you visit your repo on github there will be instructions on how to do this on the Code tab) NOTE: you will want to create a new folder for this
@@ -47,7 +53,7 @@ riffRaffArtifactResources += (file("cfn.yaml"), s"${name.value}-cfn/cfn.yaml")
 
 Make sure you replace `<name of project>` with your project name you decided on in step 1
 
-
+At this point, open the project with intelliJ via File -> Open, and select build.sbt
 
 5. Create a file called plugins.sbt in root/project
 
