@@ -100,7 +100,7 @@ The ‘handler’ function is the function that will be called when your lambda 
 
 19. Check that branches are building by pushing to a new branch and navigating to your build through the Projects in the toolbar (your project will be under Playground) NOTE: this may take a few mins
 
-20. Create a riff-raff.yaml and add the following:
+20. Create a riff-raff.yaml in the root and add the following:
 
 ```yaml
 stacks: [playground]
