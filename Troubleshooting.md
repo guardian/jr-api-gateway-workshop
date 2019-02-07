@@ -7,7 +7,7 @@ Known problems and answers:
 
     or something to do with ROLLBACK
 
-    __Answer: You need to manually delete the stack in the Cloudformation console. AWS is stupid: if you try and upload a CF template and it doesn't have a working template to fall back on, it enters this weird state that isn't useful for anyone__
+    __Answer: You need to manually delete the stack in the Cloudformation console. AWS is stupid: if you try and upload a CF template and it doesn't have a working template to fall back on, it enters this weird state that isn't useful for anyone. To delete it, go to janus and click on the cloud icon for the Dev Playground account. Make sure you are in the right region (top right, it should say Ireland). Then navigate to CloudFormation in services. You should see your stack, with ROLLBACK_COMPLETE next to it in red. Delete the stack! You may wish to validate the template locally before carrying on (see q3)__
 
 
 
@@ -18,4 +18,4 @@ Known problems and answers:
 
 3. My cloudformation template is invalid and I don't want to wait until it has built in teamcity to find out!
 
-__Answer: First, go to the Janus credentials page where you usually copy and paste your AWS credentials from, and copy and paste the creds in the EXPORT TO SHELL section. Then run `aws cloudformation validate-template --template-body file:///<path to file>` and you will be able to test the vailidity of your template locally
+__Answer: First, go to the Janus credentials page where you usually copy and paste your AWS credentials from, and copy and paste the creds in the EXPORT TO SHELL section. Then run `aws cloudformation validate-template --template-body file:///<path to file>` and you will be able to test the vailidity of your template locally__
