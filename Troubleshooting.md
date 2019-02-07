@@ -17,4 +17,5 @@ Known problems and answers:
 
 
 3. My cloudformation template is invalid and I don't want to wait until it has built in teamcity to find out!
-__Answer: First, go to the Janus credentials page where you usually copy and paste your AWS credentials from, and copy and paste the creds in the EXPORT TO SHELL section. Then run `aws cloudformation validate-template --template-body file:///<path to file>` and you will be able to test the vailidity of your template locally__
+__Answer: First, ensure you have up to date Janus credentials Then run `
+aws cloudformation validate-template --profile developerPlayground --template-body file:///<path to file>` and you will be able to test the vailidity of your template locally__
